@@ -15,7 +15,7 @@ then
 	ENDTIME=$(echo "$STARTTIME"'+60*60*24' | bc)
 	echo 'end time:' "$ENDTIME"
 	shift
-	curl -s 'https://aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=csv&stationString='"$ID"'&startTime='"$STARTTIME"'&endTime='"$ENDTIME" 
+	curl -s 'https://aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=csv&stationString='"$ID"'&startTime='"$STARTTIME"'&endTime='"$ENDTIME" | grep "$ID"
 else
 	echo 'Nespravny pocet argumentov'
 fi
